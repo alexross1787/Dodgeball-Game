@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Exo+2:wght@300&family=Fjalla+One&family=Italiana&family=Kdam+Thmor+Pro&family=Oswald:wght@200;500&family=Roboto:ital,wght@0,400;1,500&family=Rubik+Mono+One&family=Rubik:wght@500&family=Source+Code+Pro&family=Teko:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Dodgeball</title>
 </head>
 <body>
@@ -11,9 +14,21 @@
         <br>
         DODGEBALL</h1>
     <section id="game">
+        <button id="startButton">Start</button>
+        <h2 id="gameOver">GAME OVER</h2>
         <div id="character"></div>
-        <div id="obstacle"></div>
+        <section id="balls">
+            <div id="ball1"></div>
+            <div id="ball2"></div>
+            <div id="ball3"></div>
+            <div id="ball4"></div>
+            <div id="ball5"></div>
+        </section>
     </section>
+    <div id="wall">
+        <h2 id="points">Points</h2>
+        <h2 id="highScore"> High Score</h2>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
