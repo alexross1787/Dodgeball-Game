@@ -1,12 +1,17 @@
-const dude = document.getElementById('character') //this is the player
-
-const ball1 = document.getElementById('ball1')
-const ball2 = document.getElementById('ball2')
-const ball3 = document.getElementById('ball3')
-const ball4 = document.getElementById('ball4')
-const ball5 = document.getElementById('ball5')
+const dude = document.getElementById('character'); 
+const ball1 = document.getElementById('ball1');
+const ball2 = document.getElementById('ball2');
+const ball3 = document.getElementById('ball3');
+const ball4 = document.getElementById('ball4');
+const ball5 = document.getElementById('ball5');
+const scoreBoard = document.getElementById('points')
+const hScoreBoard = document.getElementById('highScore')
+const countdown = document.getElementById('countdown')
+let score = 0;
+let highScore = 0;
 
 const gameOver = document.getElementById('gameOver')
+const playAgain = document.getElementById('playAgain')
 
 const balls = [ball1, ball2, ball3, ball4, ball5]
 
@@ -82,7 +87,6 @@ function checkCollision() {
 
     for (const ball of balls) {
         const ballPos = ball.getBoundingClientRect();
-        let collision = false
 
 
         if (
@@ -91,18 +95,49 @@ function checkCollision() {
             dudePos.y < ballPos.y + ballPos.height &&
             dudePos.y + dudePos.height > ballPos.y
         ) {
+            if (ball.id === 'ball1' ||
+                ball.id === 'ball2' ||
+                ball.id === 'ball3' ||
+                ball.id === 'ball4'
+                ){
+            clearInterval(collisionInterval)
             console.log(`Collision detected between dude and ${ball.id}!`);
-            collision = true;
-            balls.forEach((ball) => {
-                hideItems(ball);
-            });
+            endGame();
+          
 
-            gameOver.style.display = 'block'
+            gameOver.style.display = 'block';
+            countdown.innerText = "3"
+            displayItems(playAgain); 
+            
+        } else {
+            score += 100;
+            scoreBoard.textContent = `Score: ${score}`;
+
+            if (score > highScore) {
+                highScore = score
+                hScoreBoard.textContent = `High Score: ${score}`
+
+            }
+            
+            
+        }
 
 
             
         }
+
     }
+}
+
+
+function endGame() {
+    balls.forEach((ball) => {
+        hideItems(ball);
+    });
+    hideItems(dude)
+
+    gameOver.style.display = 'block';
+    displayItems(playAgain);
 }
 
 
@@ -117,18 +152,61 @@ function clickStart() {
     let button = document.getElementById('startButton')
     
     button.addEventListener('click', () => {
-        startGame()
+        counter()
         button.style.display = 'none';
         dude.style.display = 'block';
         
-        balls.forEach((ball) => {
-            displayItems(ball);
-        })
-        
+       
 
     });
 }
 
+function counter() {
+    const countdown = document.getElementById('countdown');
+    countdown.style.display = 'block'
+  
+    function updateCountdown(count) {
+      countdown.innerText = count;
+    }
+  
+    function countDownFrom(number) {
+      let count = number;
+      let interval = setInterval(function() {
+        updateCountdown(count);
+        count--;
+  
+        if (count < 0) {
+          clearInterval(interval);
+          countdown.style.display = 'none';
+          startGame()
+          balls.forEach((ball) => {
+            displayItems(ball);
+        });
+        
+        }
+      }, 300);
+    }
+  
+    countDownFrom(3);
+  }
+  
+  
+
+
+    
+
+function restartGame() {
+    score = 0;
+    scoreBoard.textContent = `Score: ${score}`;
+    hideItems(gameOver);
+    hideItems(playAgain);
+    displayItems(dude);
+    counter();
+
+}
+
+document.getElementById('playAgain').addEventListener('click', () => {
+    restartGame();
+})
+
 clickStart()
-
-

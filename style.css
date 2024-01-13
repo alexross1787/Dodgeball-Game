@@ -4,6 +4,7 @@
     text-align: center;
     font-family: 'Rubik Mono One';
     font-weight: 500;
+    outline: 1px solid red;
 
 }
 
@@ -21,21 +22,47 @@ body {
     background-color: black;
     margin: 50px auto 0 auto;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#background {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    z-index: 1;
 }
 
 #startButton {
-    height: 10%;
-    width: 40%;
-    position: relative;
-    top: 45%;
-    font-size: 400%;
+    height: 120px;
+    width: 300px;
+    font-size: 250%;
+    font-weight: 100;
     color: white;
     background-color: red;
+    position: absolute;
+    top: 45%;
+    left: 39%;
+    z-index: 2;
 }
 
-h1 {
-    font-weight: 500;
+#playAgain {
+    height: 80px;
+    width: 40%;
+    font-size: 2em;
+    position: relative;
+    top: 65%;
+    left: 29%;
+    display: none;
+    z-index: 2;
+
 }
+
+#points, #highScore {
+    font-size: 2.5em;
+}
+
+
 
 #gameOver {
     color: white;
@@ -44,8 +71,22 @@ h1 {
     position: relative;
     top: 50%;
     display: none;
+    z-index: 2;
+
 
 }
+
+#countdown {
+    color: white;
+    font-size: 8em;
+    position: relative;
+    top: 40%;
+    display: none;
+    z-index: 2;
+
+    
+}
+
  
 #character { 
     background-color: yellow;
@@ -54,8 +95,7 @@ h1 {
     position: relative;
     top: 800px;
     left: 350px;
-    z-index: 1;
-    display: none;
+    z-index: 3;
 
 
 }
@@ -70,6 +110,7 @@ h1 {
     top: -100px;
     animation: slide 1.5s linear infinite;
     display: none;
+    z-index: 2;
 
 }
 
@@ -82,6 +123,8 @@ h1 {
     top: -100px;
     animation: slide2 2s linear infinite;
     display: none;
+    z-index: 2;
+
 
 }
 
@@ -94,6 +137,8 @@ h1 {
     top: -100px;
     animation: slide3 2s linear infinite;
     display: none;
+    z-index: 2;
+
 
 }
 
@@ -106,6 +151,8 @@ h1 {
     top: -100px;
     animation: slide4 1.9s linear infinite;
     display: none;
+    z-index: 2;
+
 
 }
 
@@ -118,6 +165,8 @@ h1 {
     top: -100px;
     animation: slide5 1.7s linear infinite;
     display: none;
+    z-index: 2;
+
 
 }
 
