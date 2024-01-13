@@ -27,8 +27,8 @@ function hideItems(item) {
 function startGame() {
 
 let x = 0; // players position
-const maxX = 800 //largest position the player can move to
-moveDude(dude).to(400) //moves dude to starting positon
+const maxX = 400 //largest position the player can move to
+moveDude(dude).to(200) //moves dude to starting positon
 
 
 //function to move dude 
@@ -71,7 +71,7 @@ document.addEventListener('keydown', (event) => {
 //iteration of ball animation. uses Math.random to change ball positions after ever iteration 
 function throwBall(ball) {
     ball.addEventListener('animationiteration', () => {
-        let random = Math.floor(Math.random() * 9);
+        let random = Math.floor(Math.random() * 4.5);
         let thrownBall = random * 100;
         ball.style.left = thrownBall + 'px';
         // console.log(`${ball.id}: ${ball.style.left}`);

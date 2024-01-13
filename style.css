@@ -4,7 +4,6 @@
     text-align: center;
     font-family: 'Rubik Mono One';
     font-weight: 500;
-    outline: 1px solid red;
 
 }
 
@@ -17,8 +16,8 @@ body {
 
 }
 #game {
-    width: 900px;
-    height: 900px;
+    width: 450px;
+    height: 450px;
     background-color: black;
     margin: 50px auto 0 auto;
     z-index: 1;
@@ -27,16 +26,16 @@ body {
 }
 
 #background {
-    width: 900px;
-    height: 900px;
+    width: 450px;
+    height: 450px;
     position: absolute;
     z-index: 1;
 }
 
 #startButton {
-    height: 120px;
-    width: 300px;
-    font-size: 250%;
+    height: 60px;
+    width: 150px;
+    font-size: 125%;
     font-weight: 100;
     color: white;
     background-color: red;
@@ -47,9 +46,10 @@ body {
 }
 
 #playAgain {
-    height: 80px;
+    height: 40px;
+    background-color: white;
     width: 40%;
-    font-size: 2em;
+    font-size: 1em;
     position: relative;
     top: 65%;
     left: 29%;
@@ -59,14 +59,14 @@ body {
 }
 
 #points, #highScore {
-    font-size: 2.5em;
+    font-size: 1.75em;
 }
 
 
 
 #gameOver {
     color: white;
-    font-size: 5em;
+    font-size: 2.5em;
     font-weight: 400;
     position: relative;
     top: 50%;
@@ -78,7 +78,7 @@ body {
 
 #countdown {
     color: white;
-    font-size: 8em;
+    font-size: 4em;
     position: relative;
     top: 40%;
     display: none;
@@ -90,10 +90,10 @@ body {
  
 #character { 
     background-color: yellow;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     position: relative;
-    top: 800px;
+    top: 400px;
     left: 350px;
     z-index: 3;
 
@@ -103,8 +103,8 @@ body {
 
 #ball1 {
     background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
     top: -100px;
@@ -116,8 +116,8 @@ body {
 
 #ball2 {
      background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
     top: -100px;
@@ -130,8 +130,8 @@ body {
 
 #ball3 {
     background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
     top: -100px;
@@ -144,11 +144,11 @@ body {
 
 #ball4 {
     background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
-    top: -100px;
+    top: -200px;
     animation: slide4 1.9s linear infinite;
     display: none;
     z-index: 2;
@@ -158,11 +158,10 @@ body {
 
 #ball5 {
     background-color: blue;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
-    top: -100px;
     animation: slide5 1.7s linear infinite;
     display: none;
     z-index: 2;
@@ -172,28 +171,28 @@ body {
 
 
 @keyframes slide {
-    0% { top: -100px; }
-    100% { top: 800px; }
+    0% { top: -50px; }
+    100% { top: 400px; }
 }
 
 @keyframes slide2 {
-    0% { top: -200px; }
-    100% { top: 700px; }
+    0% { top: -100px; }
+    100% { top: 350px; }
 }
 
 @keyframes slide3 {
-    0% { top: -300px; }
-    100% { top: 600px; }
+    0% { top: -150px; }
+    100% { top: 300px; }
 }
 
 @keyframes slide4 {
-    0% { top: -400px; }
-    100% { top: 500px; }
-}
+    0% { top: -200px; }
+    100% { top: 250px; }
+} 
 
 @keyframes slide5 {
-    0% { top: -500px; }
-    100% { top: 400px; }
+    0% { top: -250px; }
+    100% { top: 200px; }
 }
 
 
