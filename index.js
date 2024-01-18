@@ -4,9 +4,10 @@ const ball2 = document.getElementById('ball2');
 const ball3 = document.getElementById('ball3');
 const ball4 = document.getElementById('ball4');
 const ball5 = document.getElementById('ball5');
-const scoreBoard = document.getElementById('points')
-const hScoreBoard = document.getElementById('highScore')
-const countdown = document.getElementById('countdown')
+const directions = document.getElementById('directions')
+const scoreBoard = document.getElementById('points');
+const hScoreBoard = document.getElementById('highScore');
+const countdown = document.getElementById('countdown');
 let score = 0;
 let highScore = 0;
 
@@ -57,12 +58,12 @@ function moveDude(dude) {
 //event listener that moves dude with arrow keys
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
-        x-=100;
+        x-=50;
         moveDude(dude).to(x)
 
     }
     else if (event.key === 'ArrowRight') {
-        x+=100;
+        x+=50;
         moveDude(dude).to(x)
     }
 })
@@ -134,7 +135,8 @@ function endGame() {
     balls.forEach((ball) => {
         hideItems(ball);
     });
-    hideItems(dude)
+    hideItems(dude);
+    displayItems(directions)
 
     gameOver.style.display = 'block';
     displayItems(playAgain);
@@ -154,16 +156,19 @@ function clickStart() {
     button.addEventListener('click', () => {
         counter()
         button.style.display = 'none';
-        dude.style.display = 'block';
+        hideItems(directions)
         
        
 
     });
 }
 
+
+
 function counter() {
     const countdown = document.getElementById('countdown');
     countdown.style.display = 'block'
+    hideItems(dude)
   
     function updateCountdown(count) {
       countdown.innerText = count;
@@ -181,6 +186,7 @@ function counter() {
           startGame()
           balls.forEach((ball) => {
             displayItems(ball);
+            displayItems(dude)
         });
         
         }
@@ -200,6 +206,7 @@ function restartGame() {
     scoreBoard.textContent = `Score: ${score}`;
     hideItems(gameOver);
     hideItems(playAgain);
+    hideItems(directions)
     displayItems(dude);
     counter();
 
@@ -209,4 +216,8 @@ document.getElementById('playAgain').addEventListener('click', () => {
     restartGame();
 })
 
+
+
+
 clickStart()
+ 
