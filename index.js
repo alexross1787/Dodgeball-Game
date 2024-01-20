@@ -136,10 +136,12 @@ function endGame() {
         hideItems(ball);
     });
     hideItems(dude);
-    displayItems(directions)
+    displayItems(directions);
 
     gameOver.style.display = 'block';
     displayItems(playAgain);
+
+
 }
 
 
@@ -151,11 +153,11 @@ const collisionInterval = setInterval(checkCollision, 100);
 
 
 function clickStart() {
-    let button = document.getElementById('startButton')
+    let startButton = document.getElementById('startButton')
     
-    button.addEventListener('click', () => {
+    startButton.addEventListener('click', () => {
         counter()
-        button.style.display = 'none';
+        startButton.style.display = 'none';
         hideItems(directions)
         
        
@@ -198,9 +200,6 @@ function counter() {
   
   
 
-
-    
-
 function restartGame() {
     score = 0;
     scoreBoard.textContent = `Score: ${score}`;
@@ -216,8 +215,13 @@ document.getElementById('playAgain').addEventListener('click', () => {
     restartGame();
 })
 
-
-
-
+function spacebarStart() {
+document.addEventListener('keydown', (event) => {
+    if (event.key === ' ') {
+        startGame()
+    }
+});
+}
+ 
 clickStart()
  

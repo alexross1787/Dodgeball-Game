@@ -16,14 +16,21 @@ body {
     background-color: black;
 
 }
+
+h1 {
+    color: white;
+    margin-top: .3em;
+    padding-bottom: 0;
+}
 #game {
     width: 450px;
     height: 450px;
     background-color: black;
-    margin: 50px auto 0 auto;
+    margin: 25px auto 0 auto;
     z-index: 1;
     display: flex;
     flex-direction: column;
+    outline: 0.5px solid white;
 }
 
 #background {
@@ -42,7 +49,7 @@ body {
     background-color: red;
     position: absolute;
     top: 45%;
-    left: 39%;
+    left:  43%;
     z-index: 2;
 }
 
@@ -67,7 +74,7 @@ body {
 }
 
 #points, #highScore {
-    font-size: 1.75em;
+    font-size: 1.55em;
 }
 
 
@@ -89,7 +96,7 @@ body {
     font-size: 4em;
     position: absolute;
     top: 30%;
-    left: 45%;
+    left: 47%;
     display: none;
     z-index: 2;
 
@@ -213,6 +220,8 @@ body {
     height: 10%;
     width: 450px;
     z-index: 1;
+    outline: 0.5px solid white;
+
 }
 
 
