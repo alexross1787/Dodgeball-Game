@@ -55,7 +55,7 @@ function moveDude(dude) {
     return {
         to: moveToSpot  
     };
-}
+} 
 
 //event listener that moves dude with arrow keys
 document.addEventListener('keydown', (event) => {
