@@ -43,14 +43,14 @@ h1 {
 
 #startButton {
     height: 60px;
-    width: 150px;
+    width: 10%;
     font-size: 125%;
     font-weight: 100;
     color: white;
     background-color: red;
     position: absolute;
     top: 45%;
-    left:  43%;
+    left:  45%;
     z-index: 2;
 }
 
